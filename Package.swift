@@ -18,22 +18,19 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", .exact("3.1.0")),
-//        .package(url: "https://github.com/GraphQLSwift/GraphQL.git", from: "0.0.0"),
-//        .package(url: "https://github.com/MihaiPantiru/Graphiti.git", .branch("master")),
+        .package(url: "https://github.com/GraphQLSwift/GraphQL.git", from: "0.0.0"),
+        .package(url: "https://github.com/MihaiPantiru/Graphiti.git", .branch("master")),
     ],
     targets: [
         .target(
             name: "VaporGraphQL",
-            dependencies: ["Vapor"]),
-//            dependencies: ["Vapor", "GraphQL", "Graphiti"]),
+            dependencies: ["Vapor", "GraphQL", "Graphiti"]),
         .target(
             name: "StarWars",
-         dependencies: ["Vapor"]),
-//            dependencies: ["Vapor", "GraphQL", "Graphiti"]),
+            dependencies: ["Vapor", "GraphQL", "Graphiti"]),
         .target(
             name: "Example",
-            dependencies: ["VaporGraphQL", "StarWars", "Vapor"]),
-//            dependencies: ["VaporGraphQL", "StarWars", "Vapor", "GraphQL", "Graphiti"]),
+            dependencies: ["VaporGraphQL", "StarWars", "Vapor", "GraphQL", "Graphiti"]),
         .testTarget(
             name: "VaporGraphQLTests",
             dependencies: ["VaporGraphQL", "StarWars"]),
